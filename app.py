@@ -1,5 +1,5 @@
-# Import necessary modules
 from flask import Flask, render_template, request
+from waitress import serve
 import bcrypt
 
 # Initialize Flask app
@@ -50,3 +50,4 @@ def password_strength():
 # Run app
 if __name__ == '__main__':
     app.run(debug=True)
+    serve(app, host="0.0.0.0", port=8080)
